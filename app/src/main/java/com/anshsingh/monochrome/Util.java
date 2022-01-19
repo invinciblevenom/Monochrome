@@ -29,7 +29,7 @@ public class Util {
     }
 
     public static Dialog createTipsDialog(final Context context) {
-        return new AlertDialog.Builder(context, android.R.style.Theme_Material_Dark_Dialog_Alert)
+        return new AlertDialog.Builder(context, android.R.style.Theme_Material_Light_Dialog_Alert)
                 .setTitle(R.string.tips_title)
                 .setMessage(context.getString(R.string.tips, COMMAND))
                 .setNegativeButton(R.string.tips_ok, null)
