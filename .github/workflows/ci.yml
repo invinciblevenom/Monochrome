@@ -32,14 +32,13 @@ jobs:
         run: ./gradlew assembleDebug testDebugUnitTest --stacktrace -DskipFormatKtlint
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2.3.1
         with:
           name: app
           path: app/build/outputs/apk/debug/*.apk
           
-      - name: Github Release
-  # You may pin to the exact commit or the version.
-  # uses: elgohr/Github-Release-Action@ed9ebd01a0c57e64e948e7f2ff59c0159e52c204
-        uses: elgohr/Github-Release-Action@v3.1
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.1.0
         with:
-          release: Monochrome 
+         name: Monochrome
+         path: app/build/outputs/apk/debug/*.apk
