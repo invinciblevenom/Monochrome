@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Greyscale</string>
-    <string name="tips_title">Need Permission!</string>
-    <string name="tips_ok">OK</string>
-    <string name="tips_copy">COPY</string>
+    <string name="app_name">Monochrome</string>
+    <string name="tips_title">Needs following Permission!</string>
+    <string name="tips_ok">Ok</string>
+    <string name="tips_copy">Copy</string>
     <string name="copy_done">Copy Success</string>
-    <string name="tips">Before use this Application, you need to use adb tools to grant permission, copy below command and exec it on a PC:\n\n%1$s\n\nOr you can use root to grant permission.</string>
+    <string name="tips">To use this app, you need adb tools to grant permission, copy below command and execute it on a PC:\n\n%1$s\n\nor you can use root to grant permission.</string>
     <string name="root_failure">root permission not granted</string>
 </resources>
