@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fei_ke.greyscale"
+    package="com.anshsingh.monochrome"
     >
 
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
