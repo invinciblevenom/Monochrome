@@ -1,4 +1,4 @@
-package com.fei_ke.greyscale;
+package com.anshsingh.monochrome;
 
 import android.app.Activity;
 import android.app.Dialog;
