@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Monochrome</string>
-    <string name="tips_title">Needs following Permission!</string>
-    <string name="tips_ok">Ok</string>
+    <string name="tips_title">Grant following Permission!</string>
+    <string name="tips_done">Done</string>
     <string name="tips_copy">Copy</string>
     <string name="copy_done">Copy Success</string>
-    <string name="tips">To use this app, you need adb tools to grant permission, copy below command and execute it on a PC:\n\n%1$s\n\nor you can use root to grant permission.</string>
-    <string name="root_failure">root permission not granted</string>
+    <string name="tips">To use this app, use adb to grant permission, execute below command on a PC:\n\n%1$s\n\nor you can use root to grant permission.</string>
+    <string name="root_failure">Root permission not granted.</string>
 </resources>
