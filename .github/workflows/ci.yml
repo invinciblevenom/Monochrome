@@ -34,6 +34,9 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
+      - name: Make gradle executable
+        run: chmod +x ./gradle
+
       - name: Build debug APK and run jvm tests
         run: ./gradlew assembleDebug testDebugUnitTest --stacktrace -DskipFormatKtlint
 
