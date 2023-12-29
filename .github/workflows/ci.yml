@@ -16,7 +16,7 @@ jobs:
   build-and-test-jvm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - uses: gradle/wrapper-validation-action@v1
 
       - name: create and checkout branch
@@ -24,28 +24,22 @@ jobs:
         if: github.event_name == 'pull_request'
         run: git checkout -B ${{ github.head_ref }}
 
-      - name: set up JDK 16
-        uses: actions/setup-java@v3
+      - name: set up JDK 11
+        uses: actions/setup-java@v2
         with:
-          java-version: 16
+          java-version: 11
           distribution: "temurin"
           cache: 'gradle'
-
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-
-      - name: Make gradle executable
-        run: chmod +x ./gradle
 
       - name: Build debug APK and run jvm tests
         run: ./gradlew assembleDebug testDebugUnitTest --stacktrace -DskipFormatKtlint
 
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2.3.1
         with:
           name: app
           path: app/build/outputs/apk/debug/*.apk
-          
+
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.1.0
         with:
