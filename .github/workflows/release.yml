@@ -24,9 +24,6 @@ jobs:
         if: github.event_name == 'pull_request'
         run: git checkout -B ${{ github.head_ref }}
 
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-
       - name: set up JDK 11
         uses: actions/setup-java@v2
         with:
@@ -34,17 +31,20 @@ jobs:
           distribution: "temurin"
           cache: 'gradle'
 
-      - name: Build debug APK and run jvm tests
-        run: ./gradlew assembleDebug testDebugUnitTest --stacktrace -DskipFormatKtlint
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Build release APK
+        run: ./gradlew assembleRelease -DskipFormatKtlint
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v4.0.0
         with:
           name: app
-          path: app/build/outputs/apk/debug/*.apk
+          path: app/build/outputs/apk/release/*.apk
 
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.1.0
+        uses: actions/download-artifact@v4.1.0
         with:
          name: app
-         path: app/build/outputs/apk/debug/*.apk
+         path: app/build/outputs/apk/release/*.apk
